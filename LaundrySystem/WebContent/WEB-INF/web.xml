@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+
+	<display-name>LaundrySystem</display-name>
+	<description>Laundry System</description>
+
+
+	<!-- When using Spring JDBC, use the following: -->
+	<!-- <context-param> <param-name>spring.profiles.active</param-name> <param-value>jdbc</param-value> 
+		</context-param> -->
+
+	<!-- When using Spring Data JPA, uncomment the following: -->
+	<!-- <context-param> <param-name>spring.profiles.active</param-name> <param-value>spring-data-jpa</param-value> 
+		</context-param> -->
+
+	<!--Here I am defining the Web Context XML files which are there at applicaiton 
+		level. -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:config/business-config.xml</param-value>
+	</context-param>
+
+	<!-- Listener used for loading above xml files when context loads -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- This is the controller servlet which dispatches req. -->
+	<servlet>
+		<servlet-name>laundrySys</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:config/mvc-core-config.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>laundrySys</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+</web-app>
