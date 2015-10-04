@@ -23,11 +23,11 @@ INSERT IGNORE INTO laundries VALUES (6, 'George',  'baner','Full Address');
 INSERT IGNORE INTO laundries VALUES (7, 'Samantha', 'baner','Full Address');
 
 
-INSERT IGNORE INTO orderDetails VALUES (1, 'serviceType','ABC','IRON','2000-09-07',11,'2000-09-22','1',1,1);
-INSERT IGNORE INTO orderDetails VALUES (2, 'serviceType','ABC','IRON','2000-09-07',11,'2000-09-22','1',1,2);
-INSERT IGNORE INTO orderDetails VALUES (3, 'serviceType','ABC','IRON','2000-09-07',11,'2000-09-22','1',2,3);
-INSERT IGNORE INTO orderDetails VALUES (4, 'serviceType','ABC','IRON','2000-09-07',11,'2000-09-22','1',3,3);
-INSERT IGNORE INTO orderDetails VALUES (5, 'serviceType','ABC','IRON','2000-09-07',11,'2000-09-22','1',3,3);
+INSERT IGNORE INTO orderDetails VALUES (1, 'serviceType','IRON','2000-09-07',11,'2000-09-22','1',1,1,1);
+INSERT IGNORE INTO orderDetails VALUES (2, 'serviceType','IRON','2000-09-07',11,'2000-09-22','1',1,1,2);
+INSERT IGNORE INTO orderDetails VALUES (3, 'serviceType','IRON','2000-09-07',11,'2000-09-22','1',2,2,3);
+INSERT IGNORE INTO orderDetails VALUES (4, 'serviceType','IRON','2000-09-07',11,'2000-09-22','1',3,2,3);
+INSERT IGNORE INTO orderDetails VALUES (5, 'serviceType','IRON','2000-09-07',11,'2000-09-22','1',3,2,3);
 
 
 INSERT IGNORE INTO items VALUES (1, 'SHIRT', '11', '12', '23');

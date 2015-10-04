@@ -18,7 +18,7 @@ public class Address extends BaseEntity{
 	@Column(name="locality")
 	private String locality;
 	
-	@Column(name="Address")
+	@Column(name="address")
 	private String address;
 	
 	@ManyToOne

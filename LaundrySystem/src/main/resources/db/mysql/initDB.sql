@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
   last_name VARCHAR(30),
-  emailId VARCHAR(20),
+  emailId   VARCHAR(20),
   password VARCHAR(20),
   INDEX(last_name)
 ) engine=InnoDB;
@@ -18,37 +18,34 @@ CREATE TABLE IF NOT EXISTS address (
   flatNumber VARCHAR(50),
   landmark VARCHAR(50),
   locality VARCHAR(50),
-  Address VARCHAR(200),
+  address VARCHAR(200),
   user_id INT(4) UNSIGNED NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id),
   INDEX(loctag)
 ) engine=InnoDB;
 
-
 CREATE TABLE IF not EXISTS laundries(
 	id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(20),
 	locality VARCHAR(50),
-  	Address VARCHAR(200)
+  	address VARCHAR(200)
 )engine=InnoDB;
-
 
 CREATE TABLE IF not EXISTS orderDetails(
 	id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	serviceType VARCHAR(50),
-	pickUpLocation VARCHAR(50),
 	washType VARCHAR(50),
 	pickUpDate DATE,
 	pickUpSlot INT(3),
 	delieveryDate DATE,
 	delieverySlot INT(3),
 	user_id INT(4) UNSIGNED NOT NULL,
+	address_id INT(4) UNSIGNED NOT NULL,
 	laundry_id INT(4) UNSIGNED NOT NULL,
-	FOREIGN KEY (pickUpLocation) REFERENCES address(loctag),
+	FOREIGN KEY (address_id) REFERENCES address(id),
 	FOREIGN KEY (user_id) REFERENCES users(id),
 	FOREIGN KEY (laundry_id) REFERENCES laundries(id)
 )engine=InnoDB;
-
 
 CREATE TABLE IF not EXISTS items(
 	id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -57,8 +54,6 @@ CREATE TABLE IF not EXISTS items(
 	drycleanPrice VARCHAR(10),
 	ironPrice VARCHAR(10)
 )engine=InnoDB;
-
-
 
 CREATE TABLE IF not EXISTS laundry_item(
 	laundry_id INT(4) UNSIGNED NOT NULL,

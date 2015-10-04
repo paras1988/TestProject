@@ -19,7 +19,6 @@ public class SampleServiceImpl implements SampleService{
 	AddressRepository add;
 
 	public User getUserById(int id) {
-		
 		user.getUserById();
 		return null;
 	}
