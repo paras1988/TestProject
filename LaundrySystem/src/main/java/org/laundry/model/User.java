@@ -24,6 +24,10 @@ public class User extends BaseEntity{
 	
 	@OneToMany(mappedBy="userId")
 	private Set<Order> orders;
+
+	public void addOrder(Order order) {
+		orders.add(order);
+	}
 	
 	
 }
