@@ -30,4 +30,8 @@
 		p:username="${jdbc.username}" 
 		p:password="${jdbc.password}" />
 
+    <beans profile="javaee" >
+        <!-- JNDI DataSource for JEE environments -->
+        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/laundry"/>
+    </beans>
 </beans>

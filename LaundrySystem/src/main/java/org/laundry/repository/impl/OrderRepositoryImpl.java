@@ -1,7 +1,6 @@
 package org.laundry.repository.impl;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,10 +20,10 @@ public class OrderRepositoryImpl implements OrderRepository{
 	@Override
 	public void save(Order order) {
 		if (order.getId() == null) {
-			this.em.persist(order);     		
+			this.em.persist(order);
 		}
 		else {
-			this.em.merge(order);    
+			this.em.merge(order);
 		}
 	}
 
@@ -42,7 +41,7 @@ public class OrderRepositoryImpl implements OrderRepository{
 		query.setParameter("userId", userId);
 		return query.getResultList();
 	}
-	
-	
+
+
 
 }

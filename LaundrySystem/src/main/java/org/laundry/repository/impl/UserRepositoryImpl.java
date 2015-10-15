@@ -1,7 +1,6 @@
 package org.laundry.repository.impl;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,11 +15,13 @@ public class UserRepositoryImpl implements UserRepository{
 	@PersistenceContext
 	private EntityManager em;
 
+	@Override
 	public User getUserById() {
 		return null;
 	}
 
 
+	@Override
 	public Collection<User> getUsersList() {
 		return null;
 	}
