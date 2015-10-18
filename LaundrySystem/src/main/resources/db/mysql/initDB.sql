@@ -1,3 +1,10 @@
+DROP Table orderDetails;
+DROP Table address;
+DROP Table users;
+DROP Table laundry_item;
+DROP Table items;
+DROP Table laundries;
+
 CREATE DATABASE IF NOT EXISTS laundry;
 GRANT ALL PRIVILEGES ON laundry.* TO paras@localhost IDENTIFIED BY 'paras';
 

@@ -25,4 +25,16 @@ public class UserRepositoryImpl implements UserRepository{
 	public Collection<User> getUsersList() {
 		return null;
 	}
+
+
+	@Override
+	public void save(User user) {
+		if (user.getId() == null) {
+			this.em.persist(user);
+		}
+		else {
+			this.em.merge(user);
+		}
+
+	}
 }

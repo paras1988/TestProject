@@ -1,3 +1,5 @@
 Ques:http://stackoverflow.com/questions/32260060/cannot-get-springs-petclinic-to-use-jndi
 
 ANS: :http://stackoverflow.com/questions/9183321/how-to-use-jndi-datasource-provided-by-tomcat-in-spring
+
+http://stackoverflow.com/questions/27260517/requestbody-working-with-string-but-not-working-with-pojo-model-rest-web-servic
