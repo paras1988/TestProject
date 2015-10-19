@@ -12,14 +12,11 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	UserRepository userRepository;
 
-	@Override
 	@Transactional
 	public void saveUser(User user) {
 		userRepository.save(user);
 
 	}
-
-	@Override
 	@Transactional(readOnly = true)
 	public User getUserDetails(int userId) {
 		// TODO Auto-generated method stub

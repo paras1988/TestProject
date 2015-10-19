@@ -1,7 +1,6 @@
 package org.laundry.controller;
 
-import java.util.Map;
-
+import org.laundry.model.User;
 import org.laundry.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +17,7 @@ public class SampleController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST
 			,consumes = {"application/xml", "application/json"})
-	public @ResponseBody void processCreationForm(@RequestBody Map<String, String> map) {
+	public @ResponseBody void processCreationForm(@RequestBody User user) {
 		System.out.println("ASDFASDFASDFASDFASDFASDF");
 	}
 

@@ -15,19 +15,15 @@ public class UserRepositoryImpl implements UserRepository{
 	@PersistenceContext
 	private EntityManager em;
 
-	@Override
 	public User getUserById() {
 		return null;
 	}
 
 
-	@Override
 	public Collection<User> getUsersList() {
 		return null;
 	}
 
-
-	@Override
 	public void save(User user) {
 		if (user.getId() == null) {
 			this.em.persist(user);

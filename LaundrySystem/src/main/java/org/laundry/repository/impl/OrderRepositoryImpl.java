@@ -17,7 +17,6 @@ public class OrderRepositoryImpl implements OrderRepository{
 	@PersistenceContext
 	private EntityManager em;
 
-	@Override
 	public void save(Order order) {
 		if (order.getId() == null) {
 			this.em.persist(order);
@@ -27,7 +26,6 @@ public class OrderRepositoryImpl implements OrderRepository{
 		}
 	}
 
-	@Override
 	public Order getOrder(int orderId) {
 		Query query = this.em.createQuery("SELECT * FROM Order WHERE id =:id");
 		query.setParameter("id", orderId);
@@ -35,7 +33,6 @@ public class OrderRepositoryImpl implements OrderRepository{
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Collection<Order> ordersListByUserId(int userId) {
 		Query query = this.em.createQuery("SELECT * FROM orderDetails WHERE user_id =:userId");
 		query.setParameter("userId", userId);
