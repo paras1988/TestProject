@@ -14,8 +14,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
@@ -51,5 +53,14 @@ public class OrderController {
 			status.setComplete();
 			return "redirect:/user/{userId}";
 		}
+	}
+
+	@RequestMapping(value = "/user/{userId}/order/new2", method = RequestMethod.POST
+			,consumes = {"application/xml", "application/json"})
+	public @ResponseBody String processCreationForm2(@RequestBody Order order) {
+		this.orderService.saveOrder(order);
+		//status.setComplete();
+		return "redirect:/users/" + order.getId();
+
 	}
 }

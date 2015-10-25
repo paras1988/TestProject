@@ -1,19 +1,13 @@
 package org.laundry.controller;
 
-import javax.validation.Valid;
-
 import org.laundry.model.User;
 import org.laundry.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 public class UserController {
@@ -21,12 +15,12 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@InitBinder
+	/*	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		dataBinder.setDisallowedFields("id");
 		//  dataBinder.setValidator(new UserValidator());
 	}
-
+	 */
 	/*	@RequestMapping(value = "/users/new", method = RequestMethod.GET)
 	public String initCreationForm(Map<String, Object> model) {
 		User users = new User();
@@ -35,7 +29,7 @@ public class UserController {
 	}
 	 */
 
-	@RequestMapping(value = "/users/new", method = RequestMethod.POST)
+	/*	@RequestMapping(value = "/users/new", method = RequestMethod.POST)
 	public String processCreationForm(@Valid User user, BindingResult result, SessionStatus status) {
 		if (result.hasErrors()) {
 			return "users/createOrUpdateOwnerForm";
@@ -45,8 +39,9 @@ public class UserController {
 			return "redirect:/users/" + user.getId();
 		}
 	}
+	 */
 
-	@RequestMapping(value = "/users/new2", method = RequestMethod.POST
+	@RequestMapping(value = "/users/new", method = RequestMethod.POST
 			,consumes = {"application/xml", "application/json"})
 	public @ResponseBody String processCreationForm2(@RequestBody User user) {
 		this.userService.saveUser(user);
